@@ -19,7 +19,7 @@ def isCarry(num1, num2, num3):
 
 for i in range(n):
     for j in range(i+1, n):
-        for k in range(i+2, n):
+        for k in range(j+1, n):
             num1 = arr[i]
             num2 = arr[j]
             num3 = arr[k]
