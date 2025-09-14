@@ -1,3 +1,4 @@
+import sys
 board = [list(map(int, input().split())) for _ in range(19)]
 
 # 검은색 1
@@ -22,7 +23,9 @@ def solution(x, y):
             else:
                 break
         if count == 5:
-            return color, (x, y)
+            center_x = x + dx[k] * 2
+            center_y = y + dy[k] * 2
+            return color, (center_x, center_y)
     return 0, None
 
 
@@ -32,7 +35,7 @@ for i in range(19):
             color, coords = solution(i, j)
             if color != 0:
                 print(color)
-                print(coords[0] + 1, coords[1] + 3)
+                print(coords[0] + 1, coords[1] + 1)
                 exit(0) 
 
 print(0) 
