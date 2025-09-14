@@ -1,7 +1,7 @@
 n = int(input())
 arr = [int(input()) for _ in range(n)]
 
-answer = -21e8
+answer = -1
 
 def isCarry(num1, num2, num3):
     while num1 > 0 or num2 > 0 or num3 > 0:
