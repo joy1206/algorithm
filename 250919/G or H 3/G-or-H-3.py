@@ -1,30 +1,28 @@
 n, k = map(int, input().split())
-x = []
-c = []
-score = -21e8
+
+locations = {}
+
 for _ in range(n):
     pos, char = input().split()
-    x.append(int(pos))
-    c.append(char)
+    locations[int(pos)] = char
 
-end = max(x)
-arr =  [0 for _ in range(end)]
-alphabet = [0 for _ in range(end)]
+end = 10001
+score_arr = [0] * 10001
 
-for num in range(n):
-    index = x[num]
-    arr[index-1] = 1
-    alphabet[index-1] = c[num]
+for pos, char in locations.items():
+    if char == 'G':
+        score_arr[pos] = 1
+    elif char == 'H':
+        score_arr[pos] = 2
 
-for i in range(end-k):
+max_score = 0
+
+for i in range(1, end-k):
     temp = 0
     for j in range(k+1):
-        if arr[i+j] == 1:
-            if alphabet[i+j] == 'G':
-                temp += 1
-            elif alphabet[i+j] == 'H':
-                temp += 2
-    if score < temp:
-        score = temp
-print(score)
+        if i+j < end:
+            temp += score_arr[i+j]
+    if max_score < temp:
+        max_score = temp
+print(max_score)
 
