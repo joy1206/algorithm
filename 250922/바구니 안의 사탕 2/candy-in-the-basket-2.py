@@ -9,7 +9,7 @@ for _ in range(N):
     locations[pos] = candy
 
 for pos, candy in locations.items():
-    arr[pos] = candy
+    arr[pos] += candy
 
 for c in range(max_end):
     if c - K > 0 and c + K < max_end:
