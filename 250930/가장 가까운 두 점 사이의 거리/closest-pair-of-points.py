@@ -16,6 +16,6 @@ for i in range(n):
         y2 = points[j][1]
 
         temp = (x1-x2)**2 + (y1-y2)**2
-    answer = min(answer, temp)
+        answer = min(answer, temp)
 
 print(answer)
