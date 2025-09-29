@@ -3,7 +3,7 @@ points = [tuple(map(int, input().split())) for _ in range(n)]
 x = [p[0] for p in points]
 y = [p[1] for p in points]
 
-answer = 0
+answer = -21e8
 
 for i in range(n):
     for j in range(i+1, n):
