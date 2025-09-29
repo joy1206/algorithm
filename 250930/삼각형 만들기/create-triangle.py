@@ -16,7 +16,7 @@ for i in range(n):
             y3 = points[k][1]
 
             # 평행 확인
-            if (x1 == x2) or (x2==x3) or (x1==x3) and (y1==y2) or (y2==y3)or (y1==y3):
+            if ((x1 == x2) or (x2==x3) or (x1==x3)) and ((y1==y2) or (y2==y3)or (y1==y3)):
                 xmin = min(x1, x2, x3)
                 ymin = min(y1, y2, y3)
                 xmax = max(x1, x2, x3)
