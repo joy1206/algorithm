@@ -7,9 +7,15 @@ answer = -21e8
 
 for i in range(n):
     # i 해고할 직원
-    for j in range(i+1, n):
-        for k in range(j+1, n):
-            temp = (times[j][1] - times[j][0]) + (times[k][1] - times[k][0])
-            answer = max(answer, temp)
+    time_arr = [0] * 1001
+    for j in range( n):
+        if i == j : continue
+        # 나머지 직원들의 시간 배열에 1을 표시
+        start_time = times[j][0]
+        end_time = times[j][1]
 
+        for k in range(start_time, end_time):
+            time_arr[k] = 1
+    temp = sum(time_arr)
+    answer = max(answer, temp)
 print(answer)
