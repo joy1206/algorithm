@@ -9,7 +9,6 @@ for i in range(N):
         if num[i] == num[j]:
         # j - i가 K 이내인지 확인
             if j - i <= K:
-                temp = max(num[i:j+1])
-                ans = max(ans, temp)
+                ans = max(ans, num[i])
 
 print(ans)
