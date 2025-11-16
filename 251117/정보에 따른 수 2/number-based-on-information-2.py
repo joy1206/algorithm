@@ -7,9 +7,7 @@ for _ in range(T):
     c.append(char)
     x.append(int(pos))
 
-length = max(x)
-
-for i in range(1, length +1):
+for i in range(a, b+1):
     d1, d2 = 1000, 1000
     for j in range(T):
         if c[j] == 'S':
