@@ -17,4 +17,5 @@ for x in range(1, 10001):
         
     if is_valid_x:
         print(x)
+        break
         
