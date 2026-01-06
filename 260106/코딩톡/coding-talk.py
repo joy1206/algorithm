@@ -1,13 +1,24 @@
 n, m, p = map(int, input().split())
-messages = [tuple(input().split()) for _ in range(m)]
+messages = []
 
-p_read = [False] * m
+for _ in range(m):
+    c, u = input().split()
+    messages.append((c, int(u)))
+                
+def solution():
+    target_u = messages[p-1][1]
 
+    if target_u == 0:
+        return
 
-for i in range(n):
-    if i >= p-1:
-        p_read[ord(messages[i][0])-65] = True
+    readers = set()
+    
+    for i in range(m):
+        if messages[i][1] == target_u or i >= p - 1:
+            readers.add(messages[i][0])
 
-for i in range(m):
-    if p_read[i] == False:
-        print(chr(i+65), end=" ")
+    for i in range(n):
+        person = chr(ord('A') + i)
+        if person not in readers:
+            print(person, end=" ")
+solution()
