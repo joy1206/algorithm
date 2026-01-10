@@ -1,13 +1,7 @@
 a = list(map(int, input().split()))
 a.sort()
-cnt = 0
 
-while True:
-    if a[0] == a[1] -1 and a[1] == a[2]-1 :
-        break
-    else:
-        a[-1] = a[1] -1
-        a.sort()
-        cnt += 1       
-
-print(cnt) 
+# 한 칸씩 옮기지 말고 먼저 거리를 계산 후 최대값 구하기
+gap1 = a[1] - a[0] -1
+gap2 = a[2] - a[1] -1
+print(max(gap1, gap2))
