@@ -10,7 +10,7 @@ for i in range(n):
 
 # 세로 1*3
 for i in range(n-2):
-    for j in range(m):
+    for j in range():
         current_sum = arr[i][j] + arr[i+1][j] + arr[i+2][j]
         max_sum = max(max_sum, current_sum)
 
