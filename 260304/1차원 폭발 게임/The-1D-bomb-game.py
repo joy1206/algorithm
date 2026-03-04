@@ -24,5 +24,5 @@ while True:
         break
 
 print(len(numbers))
-for i in range(len(nu)):
+for i in range(len(numbers)):
     print(numbers[i])
