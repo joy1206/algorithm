@@ -38,6 +38,15 @@ for _ in range(k):
             game_over = True
             break
 
+        # 사과가 있다면
+        if apple[nr][nc]:
+            # 꼬리는 사라지지 않고 몸의 길이가 1 늘어나게 됩니다.
+            apple[nr][nc] = False
+        else:
+            # 꼬리는 사라집니다.
+            tail_r, tail_c = snake_body_coords.pop()
+            is_snake_body[tail_r][tail_c] = False
+
         # 내 몸과 부딪히는지 check
         if is_snake_body[nr][nc]:
             game_over = True
@@ -47,14 +56,7 @@ for _ in range(k):
         snake_body_coords.appendleft((nr, nc))
         is_snake_body[nr][nc] = True
 
-        # 사과가 있다면
-        if apple[nr][nc]:
-            # 꼬리는 사라지지 않고 몸의 길이가 1 늘어나게 됩니다.
-            apple[nr][nc] = False
-        else:
-            # 꼬리는 사라집니다.
-            tail_r, tail_c = snake_body_coords.pop()
-            is_snake_body[tail_r][tail_c] = False
+        
     if game_over:
         break
 print(time)
