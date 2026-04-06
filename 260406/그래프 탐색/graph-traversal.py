@@ -12,12 +12,14 @@ for _ in range(m):
 visited = [False] * (n+1)
 
 def dfs(vertex):
+    visited[vertex] = True
     for curr_v in graph[vertex]:
         if not visited[curr_v]:
-            visited[curr_v] = True
             dfs(curr_v)
+
 dfs(1)
-for i in range(n+1):
+
+for i in range(1, n+1):
     if visited[i]:
         ans += 1
 print(ans)
