@@ -1,25 +1,25 @@
 import sys
 
 n, m = map(int, sys.stdin.readline().split())
+# 인접리스트
 graph = [[] for _ in range(n + 1)]
-ans = -1
-
-for _ in range(m):
-    u, v = map(int, sys.stdin.readline().split())
-    graph[u].append(v)
-    graph[v].append(u)
-
-visited = [False] * (n+1)
+visited = [False for _ in range(n + 1)]
+vertex_cnt = 0
 
 def dfs(vertex):
-    visited[vertex] = True
+    global vertex_cnt
     for curr_v in graph[vertex]:
         if not visited[curr_v]:
+            visited[curr_v] = True
+            vertex_cnt += 1
             dfs(curr_v)
 
+for _ in range(m):
+    v1, v2 = map(int, sys.stdin.readline().split())
+    graph[v1].append(v2)
+    graph[v2].append(v1)
+
+visited[1] = True
 dfs(1)
 
-for i in range(1, n+1):
-    if visited[i]:
-        ans += 1
-print(ans)
+print(vertex_cnt)
