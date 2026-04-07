@@ -1,5 +1,5 @@
 n, m = map(int, input().split())
-edges = [list(map(int, input().split())) for _ in range(m)]
+edges = [list(map(int, input().split())) for _ in range(n)]
 
 visited = [[False]*m for _ in range(n + 1)]
 ans = 0 # (n-1, m-1에 도착하면 성공)
