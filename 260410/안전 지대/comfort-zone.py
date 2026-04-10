@@ -1,3 +1,9 @@
+# 런타임 에러의 이유 = Python에서 기본 재귀 제한이 1000이기 때문
+# 문제에서는 N, M이 최대 50 -> 50 * 50 = 2500칸
+import sys
+sys.setrecursionlimit(10**6) 
+# bfs를 활용하면 재귀 제한 걱정 없이 풀 수 있다.
+
 n, m = map(int, input().split())
 grid = [list(map(int, input().split())) for _ in range(n)] # 각 집의 높이
 visited =[[False] * n for _ in range(n)]
