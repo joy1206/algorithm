@@ -1,0 +1,11 @@
+-- 코드를 입력하세요
+# product 테이블과 offline sale 테이블에서 상품고드 별 
+# 매출액(판매가 * 판매량) 합계 출력
+# 매출액을 내림차순
+# 상품 코드 오름차순
+SELECT P.PRODUCT_CODE, SUM(P.PRICE * O.SALES_AMOUNT)SALES
+FROM PRODUCT P
+INNER JOIN OFFLINE_SALE O
+ON P.PRODUCT_ID = O.PRODUCT_ID
+GROUP BY P.PRODUCT_CODE
+ORDER BY SALES DESC, P.PRODUCT_CODE ASC
