@@ -1,10 +1,9 @@
 def solution(brown, yellow):
-    total = brown + yellow
+    extent = brown + yellow  # 넓이
     
-    for h in range(1, total):
-        if total % h == 0:
-            w = total // h
-            if w >= h and (w-2)*(h-2) == yellow:
-                answer = [w, h]
+    for w in range(extent, 0, -1):
+        if extent % w == 0:
+            h = extent // w
+            if (w-2) * (h-2) == yellow:
+                return [w, h]
                 break
-    return answer 
